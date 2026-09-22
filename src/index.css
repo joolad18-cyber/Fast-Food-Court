@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-burgundy: #8B2E24;
+    --color-cream: #F3E4CC;
+    --color-charcoal: #29231F;
+    --color-warmgold: #D99A45;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #F3E4CC;
+    color: #29231F;
+  }
+
+  h1, h2, h3, .font-heading {
+    font-family: 'Barlow Condensed', 'Bebas Neue', sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  .font-display {
+    font-family: 'Bebas Neue', cursive, sans-serif;
+    letter-spacing: 0.03em;
+  }
+}
+
+@keyframes steamFlow {
+  0% {
+    transform: translateY(0) scaleX(1) scaleY(1);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-40px) scaleX(1.4) scaleY(1.8);
+    opacity: 0;
+  }
+}
+
+@keyframes marqueeFast {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-steam {
+  animation: steamFlow 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+}
+
+.animate-marquee-fast {
+  display: flex;
+  width: max-content;
+  animation: marqueeFast 18s linear infinite;
+}
+
+.animate-marquee-fast:hover {
+  animation-play-state: paused;
+}
+
+/* Snappy 3D tilt perspective */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

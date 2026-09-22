@@ -1,0 +1,6 @@
+{
+  "name": "Fast Meals Court",
+  "description": "High-energy quick-service restaurant brand with interactive 3D dish showcases, snappy menu, fast ordering, and bold modern branding.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
